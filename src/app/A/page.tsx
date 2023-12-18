@@ -6,21 +6,15 @@ import { RocketData } from "../../../types";
 import { Button } from "@tremor/react";
 import { RefreshIcon } from "@heroicons/react/outline";
 import LayoutAB from "../_components_assignments/LayoutAB";
-import styles from '../_styles/layoutAB.module.css'
 
 
 export default function PageA() {
-    const [lastValues, setLastValues] = useState<RocketData | null>({
-        velocity: 0,
-        altitude: 0,
-        temperature: 0,
-        statusMessage: "",
-        isAscending: false,
-        isActionRequired: true
-    });
+    const [lastValues, setLastValues] = useState<RocketData | null>();
+    // KEEPS record of 15 values
     const [history, setHistory] = useState<RocketData[]>([]);
 
     async function fetchRocket() {
+        const amountOfValuesToBeSave = -15
         try {
             const res = await fetch(
                 `${process.env.API_URL}${process.env.A_ENDPOINT}`
@@ -28,7 +22,7 @@ export default function PageA() {
             const resJson = await res.json();
             setLastValues(resJson);
             setHistory((prev) => {
-                const prevElements = [...prev, resJson].slice(-15);
+                const prevElements = [...prev, resJson].slice(amountOfValuesToBeSave);
                 return prevElements;
             });
             return;
@@ -39,7 +33,7 @@ export default function PageA() {
     }
 
     useEffect(() => {
-        // fetchRocket();
+        fetchRocket();
     }, []);
 
     const tempVsAltitude = history.map((data) => {
@@ -63,36 +57,34 @@ export default function PageA() {
     });
 
     return (
-        <div className={styles.right_panel}>
 
-            <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
-                <div className="w-full justify-start" >
-                    <Button
-                        icon={RefreshIcon}
-                        onClick={() => {
-                            fetchRocket();
-                        }}
-                    >
-                        Refresh data
-                    </Button>
-                </div>
-
-                {lastValues && (
-                    <>
-                        <LayoutAB
-                            statusMessage={lastValues.statusMessage}
-                            velocity={lastValues.velocity}
-                            altitude={lastValues.altitude}
-                            temperature={lastValues.temperature}
-                            isActionRequired={lastValues.isActionRequired}
-                            isAscending={lastValues.isAscending}
-                            preData={dataStatus}
-                            tempVsAltitude={tempVsAltitude}
-                            dataGraphVelocity={dataGraphVelocity}
-                        />
-                    </>
-                )}
+        <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
+            <div className="w-full justify-start" >
+                <Button
+                    icon={RefreshIcon}
+                    onClick={() => {
+                        fetchRocket();
+                    }}
+                >
+                    Refresh data
+                </Button>
             </div>
+
+            {lastValues && (
+                <>
+                    <LayoutAB
+                        statusMessage={lastValues.statusMessage}
+                        velocity={lastValues.velocity}
+                        altitude={lastValues.altitude}
+                        temperature={lastValues.temperature}
+                        isActionRequired={lastValues.isActionRequired}
+                        isAscending={lastValues.isAscending}
+                        preData={dataStatus}
+                        tempVsAltitude={tempVsAltitude}
+                        dataGraphVelocity={dataGraphVelocity}
+                    />
+                </>
+            )}
         </div>
     );
 }
