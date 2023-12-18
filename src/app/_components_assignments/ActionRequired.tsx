@@ -2,6 +2,34 @@
 import { Button } from "@tremor/react";
 
 export default function ActionRequired({ action }: { action: boolean }) {
+
+    const handleClick = async () => {
+        // tried with put, post but both methods are not allowed
+        // left get and make nd make an alert
+        const requestBody = {
+            message: "help"
+        }
+        try {
+            const res = await fetch(`${process.env.API_URL}${process.env.B_ENDPOINT}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestBody)
+            });
+
+            if (!res.ok) {
+                throw new Error("Something went wrong")
+            }
+            const resJson = await res.json()
+            alert("Problem solved, you saved the planet!")
+            // console.log(resJson)
+
+        } catch (err) {
+            console.log("ERROR", err)
+        }
+    }
+
     const shimmer =
         'relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-red-500 before:to-transparent';
 
@@ -11,7 +39,7 @@ export default function ActionRequired({ action }: { action: boolean }) {
                 <p className="text-2xl text-gray-900 dark:text-gray-500">
                     ⚠️ Action required
                 </p>
-                <Button className="absolute top-2 right-2">Fix all your problems</Button>
+                <Button onClick={handleClick} className="absolute top-2 right-2">Fix all your problems</Button>
             </div>
         )
     } else {
