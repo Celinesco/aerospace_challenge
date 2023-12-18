@@ -6,15 +6,13 @@ import StatusTracker from "./StatusTracker";
 import VelocityCard from "./VelocityCard";
 import VelocityGraph from "./VelocityGraph";
 import { LayoutABProps } from "../../../types";
-import styles from '../_styles/layoutAB.module.css'
-
 
 
 export default function LayoutAB({ statusMessage, isAscending, velocity, altitude, temperature, tempVsAltitude, isActionRequired, dataGraphVelocity, preData }: LayoutABProps) {
     return (
         <div >
             <div className="rounded-lg mt-4">
-                <div className="grid sm:gap-2 mb-4 sm:grid-cols-1 md:grid-cols-2 md:gap-4">
+                <div className="grid sm:gap-2 mb-4 sm:grid-cols-1 lg:grid-cols-2 md:gap-4">
                     <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-fit">
                         <StatusTracker
                             name={"Rocket Id"}
