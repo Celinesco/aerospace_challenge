@@ -6,6 +6,7 @@ import StatusTracker from "../_components_assignments/StatusTracker";
 import { RocketData } from "../../../types";
 import VelocityCard from "../_components_assignments/VelocityCard";
 import TemperatureCard from "../_components_assignments/TemperatureCard";
+import ActionRequired from "../_components_assignments/ActionRequired";
 
 export default function PageA() {
     const [data, setData] = useState<RocketData | null>({
@@ -14,7 +15,7 @@ export default function PageA() {
         statusMessage:
             "hola terricolas loren ispum hoal me llame celina tengo 33 aniso casi ya",
         isAscending: true,
-        isActionRequired: false,
+        isActionRequired: true,
     });
 
     return (
@@ -25,7 +26,7 @@ export default function PageA() {
                         <div className="grid grid-cols-2 gap-4 mb-4">
                             <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-fit">
                                 <StatusTracker
-                                    name={"Rocket name"}
+                                    name={"Rocket Id"}
                                     status={data?.statusMessage}
                                 />
                             </div>
@@ -42,10 +43,8 @@ export default function PageA() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-                            <p className="text-2xl text-gray-400 dark:text-gray-500">
-                                action required
-                            </p>
+                        <div className="h-max mb-4 rounded bg-gray-50 dark:bg-gray-800">
+                            <ActionRequired action={data?.isActionRequired} />
                         </div>
                         <div className="grid grid-cols-2 gap-4 mb-4">
                             <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
