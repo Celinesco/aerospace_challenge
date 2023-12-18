@@ -1,4 +1,5 @@
 'use client';
+import { Button } from "@tremor/react";
 
 export default function ActionRequired({ action }: { action: boolean }) {
     const shimmer =
@@ -10,6 +11,7 @@ export default function ActionRequired({ action }: { action: boolean }) {
                 <p className="text-2xl text-gray-900 dark:text-gray-500">
                     ⚠️ Action required
                 </p>
+                <Button className="absolute top-2 right-2">Fix all your problems</Button>
             </div>
         )
     } else {
