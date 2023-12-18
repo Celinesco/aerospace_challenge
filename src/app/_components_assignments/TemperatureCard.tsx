@@ -8,8 +8,8 @@ export default function TemperatureCard({
 }: {
     temperature: number;
 }) {
-
-    const scaleFactor = 0.334
+    const scaleFactor = 0.334;
+    const valueOnScale = temperature * scaleFactor;
 
     return (
         <Card className="max-w-sm">
@@ -21,7 +21,15 @@ export default function TemperatureCard({
                     <Text>1 </Text>
                     <Text>300 </Text>
                 </Flex>
-                <MarkerBar value={temperature * scaleFactor} minValue={0} maxValue={100} color="yellow" className="mt-4" />
+                {/* the value falls out of the range, this is why I added the conditional
+         this could be avoid by knowing aprox the range of temperature */}
+                <MarkerBar
+                    value={valueOnScale > 0 ? valueOnScale : 0}
+                    minValue={0}
+                    maxValue={100}
+                    color="yellow"
+                    className="mt-4"
+                />
             </Card>
         </Card>
     );
