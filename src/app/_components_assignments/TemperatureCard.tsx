@@ -8,18 +8,30 @@ export default function TemperatureCard({
 }: {
     temperature: number;
 }) {
-    const scaleFactor = 0.334;
-    const valueOnScale = temperature * scaleFactor;
+
+    function celsiusToKelvin(celsius: number) {
+        var kelvin = celsius + 273.15;
+        return kelvin;
+    }
+
+
+    const scaleFactor = 0.167;
+    const valueOnScale = celsiusToKelvin(temperature) * scaleFactor;
+
 
     return (
         <Card className="max-w-sm">
             <Flex>
                 <Text>Temperature (K)</Text>
+                <div className="text-center mt-1">
+                    <Text>{Math.floor(celsiusToKelvin(temperature))} K</Text>
+                    <Text>{Math.floor(temperature)} C</Text>
+                </div>
             </Flex>
             <Card className="max-w-sm">
                 <Flex>
                     <Text>1 </Text>
-                    <Text>300 </Text>
+                    <Text>600 </Text>
                 </Flex>
                 {/* the value falls out of the range, this is why I added the conditional
          this could be avoid by knowing aprox the range of temperature */}
@@ -31,6 +43,7 @@ export default function TemperatureCard({
                     className="mt-4"
                 />
             </Card>
+
         </Card>
     );
 }
