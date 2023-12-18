@@ -46,7 +46,7 @@ const StatusTracker = ({ name = "Rocket Name/id", status }: TrackerProps) => {
         <Card className="w-96">
             <Title>{name}</Title>
             <Text>{`Last status at: ${hours}:${minutes}:${seconds}`}</Text>
-            <p className="w-64 whitespace-normal py-1 bg-blue-200 text-blue-900 p-2 rounded mt-1 text-sm">{status}</p>
+            <p className="whitespace-normal py-1 bg-blue-200 text-blue-900 p-2 rounded mt-1 text-sm">{status}</p>
             <Flex justifyContent="end" className="mt-4">
                 <Text>Uptime 92%</Text>
             </Flex>
