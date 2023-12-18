@@ -1,18 +1,7 @@
 'use client';
 import { Card, Title, Tracker, Flex, Text, Color, Badge } from "@tremor/react";
-import { useEffect } from "react";
+import { TrackerProps } from "../../../types";
 
-
-type PrevData = {
-    tooltip: string;
-    color: any
-}
-
-type TrackerProps = {
-    name: string,
-    status: string,
-    preData: PrevData[]
-}
 
 const StatusTracker = ({ name = "Rocket Name/id", status, preData }: TrackerProps) => {
     const date = new Date();
