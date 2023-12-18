@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="flex md:flex-row md:overflow-hidden">
           <NavBar />
           <SideBar />
-          <section className="w-full min-h-screen md:p-20 m-auto ">
+          <section className="w-full min-h-screen md:p-20 m-auto">
             {children}
           </section>
         </div>

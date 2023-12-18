@@ -55,8 +55,8 @@ export default function AssignmentB() {
 
 
     return (
-        <div className="p-4 sm:ml-64">
-            <div className="flex justify-between">
+        <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
+            <div className="flex justify-between w-1/2">
                 <Button onClick={() => setWSAddress(`${process.env.WS_ENDPOINT}`)}>
                     Start transmition
                 </Button>

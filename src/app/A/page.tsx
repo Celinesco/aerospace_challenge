@@ -6,10 +6,18 @@ import { RocketData } from "../../../types";
 import { Button } from "@tremor/react";
 import { RefreshIcon } from "@heroicons/react/outline";
 import LayoutAB from "../_components_assignments/LayoutAB";
+import styles from '../_styles/layoutAB.module.css'
 
 
 export default function PageA() {
-    const [lastValues, setLastValues] = useState<RocketData | null>();
+    const [lastValues, setLastValues] = useState<RocketData | null>({
+        velocity: 0,
+        altitude: 0,
+        temperature: 0,
+        statusMessage: "",
+        isAscending: false,
+        isActionRequired: true
+    });
     const [history, setHistory] = useState<RocketData[]>([]);
 
     async function fetchRocket() {
@@ -55,9 +63,10 @@ export default function PageA() {
     });
 
     return (
-        <div className="py-10">
-            {lastValues && (
-                <div className="p-4 sm:ml-64">
+        <div className={styles.right_panel}>
+
+            <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
+                <div className="w-full justify-start" >
                     <Button
                         icon={RefreshIcon}
                         onClick={() => {
@@ -66,19 +75,24 @@ export default function PageA() {
                     >
                         Refresh data
                     </Button>
-                    <LayoutAB
-                        statusMessage={lastValues.statusMessage}
-                        velocity={lastValues.velocity}
-                        altitude={lastValues.altitude}
-                        temperature={lastValues.temperature}
-                        isActionRequired={lastValues.isActionRequired}
-                        isAscending={lastValues.isAscending}
-                        preData={dataStatus}
-                        tempVsAltitude={tempVsAltitude}
-                        dataGraphVelocity={dataGraphVelocity}
-                    />
                 </div>
-            )}
+
+                {lastValues && (
+                    <>
+                        <LayoutAB
+                            statusMessage={lastValues.statusMessage}
+                            velocity={lastValues.velocity}
+                            altitude={lastValues.altitude}
+                            temperature={lastValues.temperature}
+                            isActionRequired={lastValues.isActionRequired}
+                            isAscending={lastValues.isAscending}
+                            preData={dataStatus}
+                            tempVsAltitude={tempVsAltitude}
+                            dataGraphVelocity={dataGraphVelocity}
+                        />
+                    </>
+                )}
+            </div>
         </div>
     );
 }
