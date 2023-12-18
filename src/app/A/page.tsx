@@ -1,38 +1,45 @@
-'use client';
+/** @format */
+
+"use client";
 import { useState } from "react";
 import StatusTracker from "../_components_assignments/StatusTracker";
 import { RocketData } from "../../../types";
+import VelocityCard from "../_components_assignments/VelocityCard";
+import TemperatureCard from "../_components_assignments/TemperatureCard";
 
 export default function PageA() {
     const [data, setData] = useState<RocketData | null>({
         velocity: 2,
-        temperature: 0,
-        statusMessage: "hola terricolas",
+        temperature: 60,
+        statusMessage:
+            "hola terricolas loren ispum hoal me llame celina tengo 33 aniso casi ya",
         isAscending: true,
         isActionRequired: false,
     });
 
     return (
         <div className="py-20">
-            {data &&
+            {data && (
                 <div className="p-4 sm:ml-64">
-                    <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                        <div className="grid grid-cols-3 gap-4 mb-4">
-                            <div className=" rounded bg-gray-50 dark:bg-gray-800 h-max p-2 ">
+                    <div className="rounded-lg">
+                        <div className="grid grid-cols-2 gap-4 mb-4">
+                            <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-fit">
                                 <StatusTracker
                                     name={"Rocket name"}
                                     status={data?.statusMessage}
                                 />
                             </div>
-                            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-                                <p className="text-2xl text-gray-400 dark:text-gray-500">
-                                    velocity
-                                </p>
-                            </div>
-                            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-                                <p className="text-2xl text-gray-400 dark:text-gray-500">
-                                    temperature
-                                </p>
+                            <div>
+                                <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-full mb-2">
+                                    <VelocityCard
+                                        isAscending={data?.isAscending}
+                                        velocity={data?.velocity}
+                                    />
+                                </div>
+                                <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-full">
+                                    {/* dont know the temperature values to be aware of. Maybe with some border values or temperature differences between data would be nice to show a difffent color  */}
+                                    <TemperatureCard temperature={data?.temperature} />
+                                </div>
                             </div>
                         </div>
                         <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
@@ -51,12 +58,10 @@ export default function PageA() {
                                     actions
                                 </p>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-            }
+            )}
         </div>
-    )
+    );
 }
