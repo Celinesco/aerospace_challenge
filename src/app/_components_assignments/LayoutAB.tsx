@@ -9,7 +9,7 @@ import { LayoutABProps } from "../../../types";
 
 
 
-export default function LayoutAB({ statusMessage, isAscending, velocity, temperature, tempVsAltitude, isActionRequired, dataGraphVelocity, preData }: LayoutABProps) {
+export default function LayoutAB({ statusMessage, isAscending, velocity, altitude, temperature, tempVsAltitude, isActionRequired, dataGraphVelocity, preData }: LayoutABProps) {
     return (
         <div>
             <div className="rounded-lg mt-4">
@@ -24,6 +24,7 @@ export default function LayoutAB({ statusMessage, isAscending, velocity, tempera
                     <div>
                         <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-full mb-2">
                             <VelocityCard
+                                altitude={altitude}
                                 isAscending={isAscending}
                                 velocity={velocity}
                             />
