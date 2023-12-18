@@ -38,3 +38,12 @@ export interface LayoutABProps extends RocketData {
   tempVsAltitude?: TemAltitudeData[];
   dataGraphVelocity?: velocityGraph[];
 }
+
+export interface RocketDataWS {
+  Altitude: number;
+  IsActionRequired: boolean;
+  IsAscending: boolean;
+  StatusMessage: string;
+  Velocity: number;
+  Temperature: number;
+}
