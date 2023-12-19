@@ -3,7 +3,7 @@ import { Card, Title, Tracker, Flex, Text, Color, Badge } from "@tremor/react";
 import { TrackerProps } from "../../../types";
 
 
-const StatusTracker = ({ name = "Rocket Name/id", status, preData }: TrackerProps) => {
+const StatusTracker = ({ name = "Spectrum", status, preData }: TrackerProps) => {
     const date = new Date();
     const hours = date.getHours();
     const min = date.getMinutes();
