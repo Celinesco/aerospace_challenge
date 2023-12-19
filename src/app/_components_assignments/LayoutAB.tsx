@@ -1,3 +1,4 @@
+/** @format */
 
 import ActionRequired from "./ActionRequired";
 import TemperatueAltitude from "./TemperatureAltitude";
@@ -7,13 +8,26 @@ import VelocityCard from "./VelocityCard";
 import VelocityGraph from "./VelocityGraph";
 import { LayoutABProps } from "../../../types";
 
+const layoutABClasses = {
+    backgroundBoxes: "rounded bg-gray-50 dark:bg-gray-800 p-2 h-max",
+};
 
-export default function LayoutAB({ statusMessage, isAscending, velocity, altitude, temperature, tempVsAltitude, isActionRequired, dataGraphVelocity, preData }: LayoutABProps) {
+export default function LayoutAB({
+    statusMessage,
+    isAscending,
+    velocity,
+    altitude,
+    temperature,
+    tempVsAltitude,
+    isActionRequired,
+    dataGraphVelocity,
+    preData,
+}: LayoutABProps) {
     return (
-        <div >
+        <div>
             <div className="rounded-lg mt-4">
                 <div className="grid sm:gap-2 mb-4 sm:grid-cols-1 lg:grid-cols-2 md:gap-4">
-                    <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-fit">
+                    <div className={`${layoutABClasses.backgroundBoxes} w-fit`}>
                         <StatusTracker
                             name={"Rocket Id"}
                             status={statusMessage}
@@ -21,14 +35,14 @@ export default function LayoutAB({ statusMessage, isAscending, velocity, altitud
                         />
                     </div>
                     <div>
-                        <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-full mb-2">
+                        <div className={`${layoutABClasses.backgroundBoxes} w-full mb-2`}>
                             <VelocityCard
                                 altitude={altitude}
                                 isAscending={isAscending}
                                 velocity={velocity}
                             />
                         </div>
-                        <div className="rounded bg-gray-50 dark:bg-gray-800 h-max p-2 w-full">
+                        <div className={`${layoutABClasses.backgroundBoxes} w-full`}>
                             {/* Don't know the temperature values to be aware of. 
                                         Maybe it would be helpful to include some boundary values or temperature differences
                                         between data to display a warning. */}
@@ -36,23 +50,22 @@ export default function LayoutAB({ statusMessage, isAscending, velocity, altitud
                         </div>
                     </div>
                 </div>
-                <div className="h-max mb-4 rounded bg-gray-50 dark:bg-gray-800">
+                <div className={layoutABClasses.backgroundBoxes}>
                     <ActionRequired action={isActionRequired} />
                 </div>
-                <div className="grid grid-cols-1 gap-4 mb-4">
-                    {tempVsAltitude &&
-                        <div className="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+                <div className="grid grid-cols-1 gap-4 mb-4 mt-2">
+                    {tempVsAltitude && (
+                        <div className={layoutABClasses.backgroundBoxes}>
                             <TemperatueAltitude data={tempVsAltitude} />
                         </div>
-                    }
-                    {dataGraphVelocity &&
-                        <div className="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+                    )}
+                    {dataGraphVelocity && (
+                        <div className={layoutABClasses.backgroundBoxes}>
                             <VelocityGraph data={dataGraphVelocity} />
                         </div>
-                    }
-
+                    )}
                 </div>
             </div>
         </div>
-    )
+    );
 }
