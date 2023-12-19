@@ -6,6 +6,11 @@ import useWebSocket from "react-use-websocket";
 import { useState } from "react";
 import { Button } from "@tremor/react";
 import { RocketDataWS } from "../../../types";
+import {
+    createsDataStatus,
+    createsdataGraphVelocityProp,
+    createsTemVsAltitudeProp,
+} from "../_components_assignments/utils/functions";
 
 export default function AssignmentB() {
     const [lastValues, setLastValues] = useState<RocketDataWS | null>();
@@ -32,39 +37,34 @@ export default function AssignmentB() {
         },
     });
 
-    const dataStatus = history.map((data) => {
-        return {
-            tooltip: data.StatusMessage,
-            color: data.IsActionRequired ? "red" : "emerald",
-        };
-    });
-
-    const tempVsAltitude = history.map((data) => {
-        return {
-            temperature: data.Temperature,
-            altitude: data.Altitude / 1000,
-        };
-    });
-
-    const dataGraphVelocity = history.map((data) => {
-        return {
-            velocity: data.Velocity,
-        };
-    });
-
-
+    const tempVsAltitude = createsTemVsAltitudeProp(
+        history,
+        "Temperature",
+        "Altitude",
+        1000
+    );
+    const dataGraphVelocity = createsdataGraphVelocityProp(history, "Velocity");
+    const dataStatus = createsDataStatus(
+        history,
+        "StatusMessage",
+        "IsActionRequired"
+    );
 
     return (
         <div className="p-24 md:p-4 sm:ml-64 flex flex-col items-center justify-center">
             <div className="sm:w-full flex justify-between lg:w-1/2 ">
                 <Button
                     className="dark:bg-blue-600 dark:text-white"
-                    onClick={() => setWSAddress(`${process.env.WS_ENDPOINT}`)}>
+                    onClick={() => setWSAddress(`${process.env.WS_ENDPOINT}`)}
+                >
                     Start transmition
                 </Button>
                 <Button
                     className="dark:bg-blue-600 dark:text-white ml-1"
-                    onClick={() => setWSAddress("wss//:")}>Stop transmition</Button>
+                    onClick={() => setWSAddress("wss//:")}
+                >
+                    Stop transmition
+                </Button>
             </div>
             <LayoutAB
                 statusMessage={lastValues?.StatusMessage ?? ""}
