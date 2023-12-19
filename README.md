@@ -42,9 +42,3 @@ The components are built with [Tremor](https://www.tremor.so/)
 For the css [Tailwind](https://tailwindcss.com/)
 
 Icons [Heroicons](https://heroicons.com/). I installed the version that is used as example on Tremor v1.0.6
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
