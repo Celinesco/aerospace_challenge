@@ -29,7 +29,6 @@ export default function ActionRequired({ action }: { action: boolean }) {
         }
     };
 
-
     if (!action) {
         return (
             <div

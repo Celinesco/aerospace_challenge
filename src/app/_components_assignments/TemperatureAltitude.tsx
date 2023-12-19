@@ -1,12 +1,11 @@
+/** @format */
 
-'use client';
+"use client";
 
-import { Card, Title, LineChart } from "@tremor/react"
+import { Card, Title, LineChart } from "@tremor/react";
 import { TemperatureAltitudeProps } from "../../../types";
 
-
 export default function TemperatueAltitude({ data }: TemperatureAltitudeProps) {
-
     return (
         <Card>
             <Title>Temperature vs Altitude</Title>
@@ -20,5 +19,5 @@ export default function TemperatueAltitude({ data }: TemperatureAltitudeProps) {
                 yAxisWidth={50}
             />
         </Card>
-    )
+    );
 }
