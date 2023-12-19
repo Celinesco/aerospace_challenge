@@ -9,7 +9,7 @@ export default function PageC() {
                     However, it might be beneficial to have information on units and
                     ranges to provide user warnings or enhance graph representation. Also
                     an ID to ensure that the information corresponds to the same item
-                    would be nice.
+                    would be nice. And last how many significat digits the values should have. I left all of them so no data is lost.
                 </li>
                 <li className="mb-4">
                     Documentation for APIs is always nice. In this case, the data from
