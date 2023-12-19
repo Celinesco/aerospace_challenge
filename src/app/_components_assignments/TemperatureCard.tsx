@@ -8,7 +8,6 @@ export default function TemperatureCard({
 }: {
     temperature: number;
 }) {
-
     function celsiusToKelvin(celsius: number) {
         var kelvin = celsius + 273.15;
         return kelvin;
@@ -18,9 +17,8 @@ export default function TemperatureCard({
     const scaleFactor = 0.167;
     const valueOnScale = celsiusToKelvin(temperature) * scaleFactor;
 
-
     return (
-        <Card className="max-w-sm">
+        <Card className="w-full">
             <Flex>
                 <Text>Temperature (K)</Text>
                 <div className="text-center mt-1">
@@ -43,7 +41,6 @@ export default function TemperatureCard({
                     className="mt-4"
                 />
             </Card>
-
         </Card>
     );
 }
