@@ -14,7 +14,7 @@ export default function TemperatureCard({
         return kelvin;
     }
 
-
+    // Temperature for sure is not celsius but I did this just as a draft to have an idea
     const scaleFactor = 0.167;
     const valueOnScale = celsiusToKelvin(temperature) * scaleFactor;
 

@@ -15,7 +15,7 @@ export default function TemperatueAltitude({ data }: TemperatureAltitudeProps) {
                 data={data}
                 index="500ms"
                 categories={["temperature", "altitude"]}
-                colors={["orange", "gray"]}
+                colors={["orange", "pink"]}
                 // valueFormatter={valueFormatter}
                 yAxisWidth={50}
             />

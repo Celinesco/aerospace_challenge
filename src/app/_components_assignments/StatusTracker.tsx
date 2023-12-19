@@ -22,7 +22,7 @@ const StatusTracker = ({ name = "Rocket Name/id", status, preData }: TrackerProp
         <Card className="w-96">
             <Title>{name}</Title>
             <Text>{`Last status at: ${hours}:${minutes}:${seconds}`}</Text>
-            <p className="whitespace-normal py-1 bg-blue-200 text-blue-900 p-2 rounded mt-1 text-sm">{status}</p>
+            <p className="whitespace-normal py-1 bg-blue-200 text-blue-900 p-2 rounded mt-1 text-sm dark:bg-blue-800 dark:text-white">{status}</p>
             <Flex justifyContent="end" className="mt-4">
                 <Text>Uptime {uptime > 0 ? Math.ceil(uptime * 100) : 0} %</Text>
             </Flex>

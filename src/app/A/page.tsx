@@ -35,11 +35,12 @@ export default function PageA() {
     useEffect(() => {
         fetchRocket();
     }, []);
-
+    // divided altitude to have the values closer. I guess the altitude is negative once certain point
+    // outside the earth is reached
     const tempVsAltitude = history.map((data) => {
         return {
             temperature: data.temperature,
-            altitude: data.altitude / 1000,
+            altitude: (data.altitude / 1000),
         };
     });
 
@@ -61,6 +62,7 @@ export default function PageA() {
         <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
             <div className="w-full justify-start" >
                 <Button
+                    className="dark:bg-blue-600 dark:text-white"
                     icon={RefreshIcon}
                     onClick={() => {
                         fetchRocket();

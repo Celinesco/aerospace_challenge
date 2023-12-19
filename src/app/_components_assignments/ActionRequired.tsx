@@ -14,12 +14,12 @@ export default function ActionRequired({ action }: { action: boolean }) {
                     'Content-Type': 'application/json',
                 },
             });
-
+            alert("Problem solved, you saved the planet!")
             if (!res.ok) {
                 throw new Error("Something went wrong")
             }
             const resJson = await res.json()
-            alert("Problem solved, you saved the planet!")
+
             // console.log(resJson)
 
         } catch (err) {
@@ -32,17 +32,17 @@ export default function ActionRequired({ action }: { action: boolean }) {
 
     if (action) {
         return (
-            <div className={`${shimmer} relative flex items-center justify-center h-24 mb-4 rounded bg-red-200`}>
-                <p className="text-2xl text-gray-900 dark:text-gray-500">
+            <div className={`${shimmer} relative flex items-center justify-center h-24 mb-4 rounded bg-red-200 dark:bg-red-900`}>
+                <p className="text-2xl text-gray-900 dark:text-white">
                     ⚠️ Action required
                 </p>
-                <Button onClick={handleClick} className="absolute top-2 right-2">Fix all your problems</Button>
+                <Button onClick={handleClick} className="absolute top-2 right-2 ">Fix all your problems</Button>
             </div>
         )
     } else {
         return (
-            <div className="relative flex items-center justify-center h-24 mb-4 rounded bg-green-100">
-                <p className="text-2xl text-gray-900 dark:text-gray-500">
+            <div className="relative flex items-center justify-center h-24 mb-4 rounded bg-green-100 dark:bg-emerald-500">
+                <p className="text-2xl text-gray-900">
                     No action is required
                 </p>
             </div>
