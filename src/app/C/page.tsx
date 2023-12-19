@@ -15,13 +15,13 @@ export default function PageC() {
             </p>
             <p className="mb-1">
                 First two endpoints, /SpectrumStatus and /SpectrumWS, no problems with
-                the connections there. But the third one I'm not sure if I missed
-                something in the exercise, but PUT and POST methods weren't allowed, and
-                the GET method didn't give back anything.
+                the connections there. But the third one I&apos;m not sure if I missed
+                something in the exercise, but PUT and POST methods weren&apos;t allowed, and
+                the GET method didn&apos;t give back anything.
             </p>
             <p className="mt-1">
                 <em>
-                    Thank you for the opportunity! I'm looking forward to your feedback!
+                    Thank you for the opportunity! I&apos;m looking forward to your feedback!
                     🚀
                 </em>
             </p>
