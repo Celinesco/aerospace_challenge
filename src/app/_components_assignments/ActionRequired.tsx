@@ -36,7 +36,8 @@ export default function ActionRequired({ action }: { action: boolean }) {
                 <p className="text-2xl text-gray-900 dark:text-white">
                     ⚠️ Action required
                 </p>
-                <Button onClick={handleClick} className="absolute top-2 right-2 ">Fix all your problems</Button>
+                <Button
+                    onClick={handleClick} className="absolute top-2 right-2 dark:bg-blue-600 dark:text-white">Fix all</Button>
             </div>
         )
     } else {
