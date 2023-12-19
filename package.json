@@ -6,7 +6,8 @@
     "dev": "next dev & open http://localhost:3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
