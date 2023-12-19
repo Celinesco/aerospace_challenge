@@ -43,7 +43,7 @@ export default function NavBar() {
                         <div className="flex items-center ms-3">
                             <ul className="list-none flex">
                                 <li className="mr-2 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <Link href="/" >Home</Link>
+                                    <Link href="/">Home</Link>
                                 </li>
                             </ul>
                             <div
