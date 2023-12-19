@@ -16,7 +16,7 @@ export default function PageC() {
                     the given endpoints <strong>/SpectrumStatus</strong> and <strong>/SpectrumWS</strong> were described in
                     the exercise. However, the <span className="text-red-600 dark:text-red-400 font-bold">/ActOnSpectrum</span> endpoint did not clarify
                     much, providing only the instruction to let the user
-                    "<strong>act</strong> in Spectrum", which I interpreted as a
+                    <strong>act</strong> in Spectrum, which I interpreted as a
                     POST or PUT request. Unfortunately, without knowing what should be in
                     the request body, it remains unclear. Nevertheless, I tried both
                     methods, PUT and POST, and for both of them, I received a 405 Method

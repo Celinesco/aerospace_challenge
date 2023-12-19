@@ -2,17 +2,13 @@
 
 "use client";
 import { Card, Text, Flex, MarkerBar } from "@tremor/react";
+import { celsiusToKelvin } from "./utils/functions";
 
 export default function TemperatureCard({
     temperature,
 }: {
     temperature: number;
 }) {
-    function celsiusToKelvin(celsius: number) {
-        var kelvin = celsius + 273.15;
-        return kelvin;
-    }
-
     // Temperature for sure is not celsius but I did this just as a draft to have an idea
     const scaleFactor = 0.167;
     const valueOnScale = celsiusToKelvin(temperature) * scaleFactor;
@@ -20,7 +16,7 @@ export default function TemperatureCard({
     return (
         <Card className="w-full">
             <Flex>
-                <Text>Temperature (K)</Text>
+                <Text>Temperature:</Text>
                 <div className="text-center mt-1">
                     <Text>{Math.floor(celsiusToKelvin(temperature))} K</Text>
                     <Text>{Math.floor(temperature)} C</Text>
@@ -31,8 +27,8 @@ export default function TemperatureCard({
                     <Text>1 </Text>
                     <Text>600 </Text>
                 </Flex>
-                {/* the value falls out of the range, this is why I added the conditional
-         this could be avoid by knowing aprox the range of temperature */}
+                {/* Since I don't know the limits, it can happen that the value might fall outside the card */}
+                {/* I only added a limit for the left side */}
                 <MarkerBar
                     value={valueOnScale > 0 ? valueOnScale : 0}
                     minValue={0}

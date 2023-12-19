@@ -14,6 +14,7 @@ export function createsTemVsAltitudeProp(
   altitudeKey: "Altitude" | "altitude",
   divisor: number
 ) {
+  // data is type RocketData
   const newList = list.map((data: any) => {
     return {
       temperature: data[temperatureKey],
@@ -47,4 +48,9 @@ export function createsDataStatus(
     };
   });
   return newList;
+}
+
+export function celsiusToKelvin(celsius: number) {
+  const kelvin = celsius + 273.15;
+  return kelvin;
 }
