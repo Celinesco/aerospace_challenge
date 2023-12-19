@@ -39,3 +39,10 @@ The components are built with [Tremor](https://www.tremor.so/)
 For the css [Tailwind](https://tailwindcss.com/)
 
 Icons [Heroicons](https://heroicons.com/). I installed the version that is used as example on Tremor v1.0.6
+
+## Introduction
+
+“Spectrum”, the launch vehicle built by Isar Aerospace just performed a successful lift-off from
+the launch pad and is flying towards Earth orbit. A web service provides live insights into
+Spectrum’s sensor system during its maiden flight. Your task is to visualize these sensor values
+in a web interface so that the crew in ground control can check if everything is okay.
