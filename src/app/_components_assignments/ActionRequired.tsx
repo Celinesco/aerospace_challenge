@@ -6,16 +6,13 @@ export default function ActionRequired({ action }: { action: boolean }) {
     const handleClick = async () => {
         // tried with put, post but both methods are not allowed
         // left get and make nd make an alert
-        const requestBody = {
-            message: "help"
-        }
+
         try {
             const res = await fetch(`${process.env.API_URL}${process.env.B_ENDPOINT}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(requestBody)
             });
 
             if (!res.ok) {
