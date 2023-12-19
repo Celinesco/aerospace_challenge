@@ -7,6 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Versions
 
 Next.js 14
+
 Node v18.17.1
 
 ```bash
@@ -29,13 +30,9 @@ kill -9 $(lsof -t -i:3000)
 
 I guess is a bug with next.js new version
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Resources
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Resources
 
 The components are built with [Tremor](https://www.tremor.so/)
 
