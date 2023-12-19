@@ -1,19 +1,14 @@
+/** @format */
 
-'use client';
+"use client";
 
-import { Card, Title, LineChart } from "@tremor/react"
-import { RocketData } from "../../../types";
+import { Card, Title, LineChart } from "@tremor/react";
 
-interface DataChart {
-    velocity: number
-}
-
-interface VelocityAltitudeProps {
-    data: DataChart[]
+export interface VelocityAltitudeProps {
+    data: { velocity: number }[];
 }
 
 export default function VelocityGraph({ data }: VelocityAltitudeProps) {
-
     return (
         <Card>
             <Title>Velocity</Title>
@@ -27,5 +22,5 @@ export default function VelocityGraph({ data }: VelocityAltitudeProps) {
                 yAxisWidth={50}
             />
         </Card>
-    )
+    );
 }
