@@ -2,7 +2,7 @@
 
 export default function PageC() {
     return (
-        <div className="p-4 sm:ml-64 flex flex-col items-center dark:text-white pt-10">
+        <div className="p-24 md:p-4 sm:ml-64 flex flex-col items-center dark:text-white pt-24">
             <p className="mb-1">
                 I understand the API is quite basic, with no real data involved.
                 However, it might be beneficial to have information on units and ranges

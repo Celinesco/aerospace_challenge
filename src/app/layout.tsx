@@ -4,6 +4,7 @@ import './globals.css'
 import NavBar from './_components_layout/NavBar'
 import Footer from './_components_layout/Footer'
 import SideBar from './_components_layout/SideBar'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,11 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" sizes="any" href="/favicon.ico"></link>
+      </Head>
       <body className={`${inter.className} dark:bg-gray-900`}>
         <div className="flex md:flex-row md:overflow-hidden">
           <NavBar />
           <SideBar />
-          <section className="w-full min-h-screen md:p-20 m-auto">
+          <section className="sm:pt-8 w-full min-h-screen md:p-20 m-auto">
             {children}
           </section>
         </div>

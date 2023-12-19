@@ -59,7 +59,7 @@ export default function PageA() {
 
     return (
 
-        <div className="p-4 sm:ml-64 flex flex-col items-center justify-center">
+        <div className="p-24 md:p-4 sm:ml-64 flex flex-col items-center justify-center">
             <div className="w-full justify-start" >
                 <Button
                     className="dark:bg-blue-600 dark:text-white"
