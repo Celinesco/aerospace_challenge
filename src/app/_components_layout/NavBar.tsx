@@ -22,7 +22,7 @@ export default function NavBar() {
                             className="flex ms-2 md:me-24"
                         >
                             <svg
-                                className="fill-current h-8 -mb-2 w-auto sm:h-10"
+                                className="fill-current h-8 -mb-2 w-auto sm:h-10 dark:invert"
                                 width="222"
                                 height="42"
                                 viewBox="0 0 222 42"
@@ -42,8 +42,8 @@ export default function NavBar() {
                     <div className="flex items-center">
                         <div className="flex items-center ms-3">
                             <ul className="list-none flex">
-                                <li className="mr-2">
-                                    <Link href="/">Home</Link>
+                                <li className="mr-2 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <Link href="/" >Home</Link>
                                 </li>
                             </ul>
                             <div
