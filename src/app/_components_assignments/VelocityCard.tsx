@@ -5,7 +5,7 @@ import { Title, Card, Text, Flex } from "@tremor/react";
 interface VelocityCardProps {
     isAscending: boolean;
     velocity: number;
-    altitude: number
+    altitude: number;
 }
 
 export default function VelocityCard({
@@ -15,8 +15,8 @@ export default function VelocityCard({
 }: VelocityCardProps) {
     return (
         <Card className="flex-grow">
-            <Flex>
-                <Flex className="flex-col">
+            <Flex className="flex-col md:flex-row">
+                <Flex className="flex-col mb-1 md:mb-0">
                     <Title>Velocity km/s</Title>
                     <Text>{velocity}</Text>
                 </Flex>
