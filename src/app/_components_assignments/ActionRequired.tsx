@@ -29,7 +29,7 @@ export default function ActionRequired({ action }: { action: boolean }) {
         }
     };
 
-    if (!action) {
+    if (action) {
         return (
             <div
                 className={`${shimmer} relative flex items-center justify-center h-36 rounded bg-red-200 dark:bg-red-900`}
