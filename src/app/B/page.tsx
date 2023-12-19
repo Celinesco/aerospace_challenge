@@ -5,7 +5,7 @@ import LayoutAB from "../_components_assignments/LayoutAB";
 import useWebSocket from "react-use-websocket";
 import { useState } from "react";
 import { Button } from "@tremor/react";
-import { RocketDataWS } from "../../../types";
+import { RocketDataWS } from "../_utils/types";
 import {
     createsDataStatus,
     createsdataGraphVelocityProp,

@@ -2,7 +2,7 @@
 
 "use client";
 import { useState, useEffect } from "react";
-import { RocketData } from "../../../types";
+import { RocketData } from "../_utils/types";
 import { Button } from "@tremor/react";
 import { RefreshIcon } from "@heroicons/react/outline";
 import LayoutAB from "../_components_assignments/LayoutAB";

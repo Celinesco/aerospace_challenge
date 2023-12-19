@@ -1,6 +1,6 @@
 /** @format */
 
-import { RocketData, RocketDataWS } from "../../../../types";
+import { RocketData, RocketDataWS } from "../../_utils/types";
 
 export function formatTimeUnit(unit: number) {
   return unit < 10 ? "0" + unit : unit.toString();

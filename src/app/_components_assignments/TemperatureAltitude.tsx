@@ -3,7 +3,7 @@
 "use client";
 
 import { Card, Title, LineChart } from "@tremor/react";
-import { TemperatureAltitudeProps } from "../../../types";
+import { TemperatureAltitudeProps } from "../_utils/types";
 
 export default function TemperatueAltitude({ data }: TemperatureAltitudeProps) {
     return (

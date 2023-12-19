@@ -2,7 +2,7 @@
 
 "use client";
 import { Card, Title, Tracker, Flex, Text } from "@tremor/react";
-import { TrackerProps } from "../../../types";
+import { TrackerProps } from "../_utils/types";
 import { formatTimeUnit } from "./utils/functions";
 
 const StatusTracker = ({

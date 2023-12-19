@@ -6,7 +6,7 @@ import TemperatureCard from "./TemperatureCard";
 import StatusTracker from "./StatusTracker";
 import VelocityCard from "./VelocityCard";
 import VelocityGraph from "./VelocityGraph";
-import { LayoutABProps } from "../../../types";
+import { LayoutABProps } from "../_utils/types";
 
 const layoutABClasses = {
     backgroundBoxes: "rounded bg-gray-50 dark:bg-gray-800 p-2 h-max",
