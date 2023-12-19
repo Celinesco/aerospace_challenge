@@ -37,6 +37,7 @@ const StatusTracker = ({
             <Flex justifyContent="end" className="mt-4">
                 <Text>Uptime {uptime > 0 ? Math.ceil(uptime * 100) : 0} %</Text>
             </Flex>
+            <Text>History of status</Text>
             <Tracker data={preData} className="mt-2" />
         </Card>
     );
